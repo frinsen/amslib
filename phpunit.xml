@@ -1,0 +1,27 @@
+<phpunit bootstrap="tests/bootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true">
+  <testsuites>
+    <testsuite name="Amslib Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./</directory>
+      <exclude>
+        <directory>util</directory>
+        <directory>__website</directory>
+        <directory>examples</directory>
+        <directory>testing-old-ignore</directory>
+      </exclude>
+    </whitelist>
+  </filter>
+
+  <logging>
+    <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+  </logging>
+</phpunit>

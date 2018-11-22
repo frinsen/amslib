@@ -1,0 +1,141 @@
+Format: 1.52
+
+
+# You can add a title and sub-title to your menu like this:
+# Title: [project name]
+# SubTitle: [subtitle]
+
+# You can add a footer to your documentation like this:
+# Footer: [text]
+# If you want to add a copyright notice, this would be the place to do it.
+
+# You can add a timestamp to your documentation like one of these:
+# Timestamp: Generated on month day, year
+# Timestamp: Updated mm/dd/yyyy
+# Timestamp: Last updated mon day
+#
+#   m     - One or two digit month.  January is "1"
+#   mm    - Always two digit month.  January is "01"
+#   mon   - Short month word.  January is "Jan"
+#   month - Long month word.  January is "January"
+#   d     - One or two digit day.  1 is "1"
+#   dd    - Always two digit day.  1 is "01"
+#   day   - Day with letter extension.  1 is "1st"
+#   yy    - Two digit year.  2006 is "06"
+#   yyyy  - Four digit year.  2006 is "2006"
+#   year  - Four digit year.  2006 is "2006"
+
+
+# --------------------------------------------------------------------------
+# 
+# Cut and paste the lines below to change the order in which your files
+# appear on the menu.  Don't worry about adding or removing files, Natural
+# Docs will take care of that.
+# 
+# You can further organize the menu by grouping the entries.  Add a
+# "Group: [name] {" line to start a group, and add a "}" to end it.
+# 
+# You can add text and web links to the menu by adding "Text: [text]" and
+# "Link: [name] ([URL])" lines, respectively.
+# 
+# The formatting and comments are auto-generated, so don't worry about
+# neatness when editing the file.  Natural Docs will clean it up the next
+# time it is run.  When working with groups, just deal with the braces and
+# forget about the indentation and comments.
+# 
+# --------------------------------------------------------------------------
+
+
+File: Amslib  (Amslib.php)
+File: Amslib_Apache  (Amslib_Apache.php)
+File: Amslib_Array  (Amslib_Array.php)
+File: Amslib_Array2  (Amslib_Array2.php)
+File: Amslib_Database  (database/Amslib_Database.php)
+File: Amslib_Database_MySQL  (database/Amslib_Database_MySQL.php)
+File: Amslib_Form  (Amslib_Form.php)
+File: Amslib_Form_Profile  (Amslib_FirePHP.php)
+File: Amslib_Form_Profile  (Amslib_Form_Profile.php)
+File: Amslib_Image  (Amslib_Image.php)
+File: Amslib_Image2  (Amslib_Image2.php)
+File: Amslib_Keystore  (Amslib_Keystore.php)
+File: Amslib_Paypal  (Amslib_Paypal.php)
+File: Amslib_Resource  (Amslib_Resource.php)
+File: Amslib_Resource_Compiler  (Amslib_Resource_Compiler.php)
+File: Amslib_Status_Code  (Amslib_Status_Code.php)
+File: Amslib_Testing_Translator_XML  (testing/Amslib_Testing_Translator_XML.php)
+File: Amslib_Validator  (Amslib_Validator.php)
+File: Amslib_Website  (Amslib_Website.php)
+
+Group: File  {
+
+   File: Amslib_File  (file/Amslib_File.php)
+   File: Amslib_File_Raw  (file/Amslib_File_Raw.php)
+   File: Amslib_File_Secure_Transfer  (file/Amslib_File_Secure_Transfer.php)
+   }  # Group: File
+
+Group: Mvc  {
+
+   File: Amslib_Mixin  (mvc/Amslib_Mixin.php)
+   File: Amslib_MVC  (mvc/Amslib_MVC.php)
+   File: Amslib_MVC_Missing  (mvc/Amslib_MVC_Missing.php)
+   }  # Group: Mvc
+
+Group: Plugin  {
+
+   File: Amslib_Plugin  (plugin/Amslib_Plugin.php)
+   File: Amslib_Plugin_Application  (plugin/Amslib_Plugin_Application.php)
+   File: Amslib_Plugin_Manager  (plugin/Amslib_Plugin_Manager.php)
+   File: Amslib_Plugin_Model  (plugin/Amslib_Plugin_Model.php)
+   File: Amslib_Plugin_Service  (plugin/Amslib_Plugin_Service.php)
+   }  # Group: Plugin
+
+Group: Router  {
+
+   File: Amslib_Router  (router/Amslib_Router.php)
+   File: Amslib_Router_Language  (router/Amslib_Router_Language.php)
+   File: Amslib_Router_Source_XML  (router/Amslib_Router_Source_XML.php)
+   File: Amslib_Router_URL  (router/Amslib_Router_URL.php)
+   }  # Group: Router
+
+Group: Translator  {
+
+   File: Amslib_Translator  (translator/Amslib_Translator.php)
+   File: Amslib_Translator_Database  (translator/Amslib_Translator_Database.php)
+   File: Amslib_Translator_Keystore  (translator/Amslib_Translator_Keystore.php)
+   File: Amslib_Translator_Source  (translator/Amslib_Translator_Source.php)
+   File: Amslib_Translator_XML  (translator/Amslib_Translator_XML.php)
+   }  # Group: Translator
+
+Group: Xml  {
+
+   File: Amslib_XML  (xml/Amslib_XML.php)
+   File: Amslib_XML_RSS  (xml/Amslib_XML_RSS.php)
+   File: Amslib_XML_Youtube  (xml/Amslib_XML_Youtube.php)
+   }  # Group: Xml
+
+Group: Js  {
+
+   File: Amslib  (js/Amslib.js)
+   File: Amslib_Accordion  (js/Amslib_Accordion.js)
+   File: Amslib_DataTables  (js/Amslib_DataTables.js)
+   File: Amslib_Dynamic_Grid  (js/Amslib_Dynamic_Grid.js)
+   File: Amslib_Fullscreen_Image  (js/Amslib_Fullscreen_Image.js)
+   File: Amslib_Google_Map  (js/Amslib_Google_Map.js)
+   File: Amslib_JQuery_UI  (js/Amslib_JQuery_UI.js)
+   File: Amslib_Numeric_Field  (js/Amslib_Numeric_Field.js)
+   File: Amslib_Service_Response  (js/Amslib_Service_Response.js)
+   File: Amslib_Shelf_Gallery  (js/Amslib_Shelf_Gallery.js)
+   File: Amslib_Simple_Fader_Slideshow  (js/Amslib_Simple_Fader_Slideshow.js)
+   File: Amslib_String  (js/Amslib_String.js)
+   File: Amslib_Urlname  (js/Amslib_Urlname.js)
+   }  # Group: Js
+
+Group: Index  {
+
+   Index: Everything
+   Class Index: Classes
+   File Index: Files
+   Function Index: Functions
+   Variable Index: Variables
+   }  # Group: Index
+

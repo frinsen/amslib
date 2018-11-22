@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+@IMPORT url("box-model.css");
+@IMPORT url("../util/h5bp/css/normalize.css");
+
+/***************************************************
+	ANTIMATTER RESET STYLES: override normalize
+	with what I think is better.
+	
+	All elements
+***************************************************/
+html *{
+	/*	remove all margins and paddings */
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	
+	/*	Fix the stupid W3C box model, Internet explorer
+		was the correct box model */
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/***************************************************
+	Disable the above box sizing on html that
+	cannot support it, allow the use of inherit
+	and an noself inherit variant for more complex
+	situations
+***************************************************/
+.disable_box_sizing,
+.disable_box_sizing.inherit *,
+.disable_box_sizing_noself *{
+	-webkit-box-sizing: content-box;
+	   -moz-box-sizing: content-box;
+	    -ms-box-sizing: content-box;
+	        box-sizing: content-box;
+}
+
+/***************************************************
+	reset all the header bold stylings cause
+	if I want this, I'll do it myself
+***************************************************/
+h1,h2,h3,h4,h5,h6{ 
+	font-weight: normal;
+}

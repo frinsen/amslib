@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<object>
+		<api>Hello_World</api>
+	</object>
+	
+	<view>
+		<name>Skeleton</name>
+		<name>Hello_World</name>
+	</view>
+
+	<path>
+		<website>__WEBSITE_ROOT__</website>
+		<admin>__WEBSITE__</admin>
+		<amslib>__WEBSITE__/amslib/</amslib>
+		<plugin>__WEBSITE__/plugins/</plugin>
+		<include>__WEBSITE__/objects/</include>
+	</path>
+	
+	<value>
+		<title>Hello World!!</title>
+	</value>
+	
+	<stylesheet>
+		<file id="bootstrap" autoload="true">__AMSLIB__/util/bootstrap/3.0.2/css/bootstrap.min.css</file>
+		<file id="xml_translation" autoload="true">/resources/xml_translations.css</file>
+	</stylesheet>
+	
+	<javascript>
+		<file id="jquery" autoload="true">__AMSLIB__/util/bootstrap/3.0.2/js/bootstrap.min.js</file>
+	</javascript>
+	
+	<router>
+		<path name="hello_world">
+			<src>/</src>
+			<resource>Hello_World</resource>
+		</path>
+	</router>
+</package>

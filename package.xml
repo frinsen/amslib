@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<object directory="__website/objects/">
+		<api>Amslib_Framework</api>
+	</object>
+	
+	<view directory="__website/views/">
+		<name>Skeleton</name>
+		<name>Home</name>
+		<name>About_Framework</name>
+		<name>Getting_Started</name>
+		<name>Using_Examples</name>
+		<name>Explain_Plugins</name>
+		<name>Explain_Webservices</name>
+		<name>Explain_API</name>
+		<name>Documentation</name>
+		<name>Test_Framework</name>
+		<name>Error_403</name>
+		<name>Error_404</name>
+		<name>Error_418</name>
+		<name>Error_500</name>
+		<name>Error_xxx</name>
+	</view>
+	
+	<value>
+    	<site_title>Amslib Framework: Welcome</site_title>
+    	<meta_description>The amslib framework website, documentation, examples and more</meta_description>
+    	<meta_author>chris thomas, antimatter studios</meta_author>
+	</value>
+	
+	<path>
+		<include>/__website/</include>
+		<include>/__website/objects/</include>
+		<file>/__website/amslib_customise.php</file>
+	</path>
+	
+	<!-- 
+	NOTE:	amslib should not be defining resources to autoload like you see in the 
+			following stylesheet or javascript blocks however because right now amslib 
+			is serving up a website, it uses the same package.xml to run the website
+			as I plan to use for the amslib plugin, so I should separate this to make 
+			the __website a plugin of it's own and separate it from amslib (the plugin)
+			
+			so when I separate amslib (the plugin) from amslib (the __website) I can remove
+			all of these autoload attributes and let the application do all the autoloading it requires	
+	-->
+	
+	<stylesheet>
+		<!--	Normally you'd only need to apply autoload="true" to the group, 
+				but because I'm straddling two systems the new syntax and old, 
+				I'll put the autoload on the individual files for now until it's upgraded 
+		-->
+		<group id="bootstrap-3.1.1" autoload="true">
+			<file id="bootstrap" autoload="true">__AMSLIB__/util/bootstrap/3.1.1/css/bootstrap.min.css</file>
+			<file id="bootstrap.xl" autoload="true">__AMSLIB__/util/bootstrap/3.1.1/css/bootstrap-xl.min.css</file>
+		</group>
+
+		<file id="framework" autoload="true">__AMSLIB__/__website/resources/framework.css</file>
+		<file id="error">__AMSLIB__/__website/resources/error.css</file>
+	</stylesheet>
+	
+	<javascript>
+		<file id="jquery/1.x" autoload="true">__AMSLIB__/util/jquery-1.10.2.min.js</file>
+		<file id="jquery/2.x">__AMSLIB__/util/jquery-2.0.3.min.js</file>
+	
+		<!-- NOTE:	amslib should not include bootstrap like this, it's ok for 
+					jquery because Amslib.js depends on it but these files are 
+					not part of amslib since it's not a bootstrap library, so 
+					I have to remove these eventually and probably they will 
+					move into the __website where they are actually required
+		-->
+		<file id="bootstrap-3.0.2" require="jquery/1.x">__AMSLIB__/util/bootstrap/3.0.2/js/bootstrap.min.js</file>
+		<!-- NOTE:	I am not sure about putting such an exact version number
+					into the id like this, perhaps I should just put "bootstrap3"
+					or even, just "bootstrap" or even "bootstrap/3.x", to follow
+					the jquery way of naming the versions
+		-->
+		<file id="bootstrap-3.1.1" require="jquery/1.x" autoload="true">__AMSLIB__/util/bootstrap/3.1.1/js/bootstrap.min.js</file>
+				
+		<!-- example of defining resources groups with dependencies -->
+		<group id="amslib/core" require="jquery/1.x">
+			<file id="my.common">__AMSLIB__/util/my.common.min.js</file>
+			<file id="my.class">__AMSLIB__/util/my.class.min.js</file>		
+			<file id="amslib">__AMSLIB__/js/Amslib.js</file>
+		</group>
+		
+		<file id="amslib.webservice">__AMSLIB__/js/Amslib_Webservice.js</file>
+		<file id="amslib.form">__AMSLIB__/js/Amslib_Form.js</file>		
+	</javascript>
+
+	<!-- explicitly define each test, it's name and callback-->
+	<phpunit>
+		<test>
+			<name>Add integer to include path</name>
+            <group>amslib.basic</group>
+			<callback>Amslib_Test::test_AddIncludePath_Integer</callback>
+		</test>
+
+		<test>
+			<name>Add non-existing path to include path</name>
+            <group>amslib.basic</group>
+			<callback>Amslib_Test::test_AddIncludePath_NonExistingPath</callback>
+		</test>
+
+		<test>
+			<name>Add existing path to include path</name>
+            <group>amslib.basic</group>
+			<callback>Amslib_Test::test_AddIncludePath_ExistingPath</callback>
+		</test>
+	</phpunit>
+
+	<!-- define a class and each test but only specify the methods to call on the class -->
+	<phpunit>
+		<class>Amslib_Test</class>
+        <group>amslib.basic</group>
+
+		<test>
+			<name>Add empty string to include path</name>
+			<callback>test_AddIncludePath_EmptyString</callback>
+		</test>
+
+		<test>
+			<name>Add object to include path</name>
+            <group>amslib.basic</group>
+			<callback>test_AddIncludePath_Object</callback>
+		</test>
+	</phpunit>
+
+	<!-- define the class and then the prefix for all the tests, reflection will be used to obtain the metadata -->
+	<phpunit>
+		<class>Amslib_Test</class>
+        <group>amslib.basic</group>
+		<prefix>test_</prefix>
+	</phpunit>
+	
+	<router>
+		<path name="home">
+			<src>/</src>
+			<resource>Home</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="about-framework">
+			<src>/about-framework/</src>
+			<resource>About_Framework</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="getting-started">
+			<src>/getting-started/</src>
+			<resource>Getting_Started</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="examples">
+			<src>/using-examples/</src>
+			<resource>Using_Examples</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="plugins">
+			<src>/what-is-a-plugins-or-components/</src>
+			<resource>Explain_Plugins</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="webservices">
+			<src>/what-is-a-webservice/</src>
+			<resource>Explain_Webservices</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="api">
+			<src>/what-is-an-api/</src>
+			<resource>Explain_API</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="documentation">
+			<src>/documentation</src>
+			<resource>Documentation</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="test-framework">
+			<src>/test-framework/</src>
+			<resource>Test_Framework</resource>
+			<parameter id="plugin">application</parameter>
+		</path>
+		
+		<path name="error:403">
+			<src>/error/403/</src>
+			<resource>Error_403</resource>
+			<parameter id="plugin">application</parameter>
+			<parameter id="site_title">There was a 403 error</parameter>
+			<stylesheet>error</stylesheet>
+		</path>
+		
+		<path name="error:404">
+			<src>/error/404/</src>
+			<resource>Error_404</resource>
+			<parameter id="plugin">application</parameter>
+			<parameter id="site_title">There was a 404 error</parameter>
+			<stylesheet>error</stylesheet>
+		</path>
+		
+		<path name="error:418">
+			<src>/error/418/</src>
+			<resource>Error_418</resource>
+			<parameter id="plugin">application</parameter>
+			<parameter id="site_title">There was a 418 error</parameter>
+			<stylesheet>error</stylesheet>
+		</path>
+		
+		<path name="error:500">
+			<src>/error/500/</src>
+			<resource>Error_500</resource>
+			<parameter id="plugin">application</parameter>
+			<parameter id="site_title">There was a 500 error</parameter>
+			<stylesheet>error</stylesheet>
+		</path>
+		
+		<path name="error:xxx">
+			<src>/error/xxx/</src>
+			<resource>Error_xxx</resource>
+			<parameter id="plugin">application</parameter>
+			<parameter id="site_title">There was an unknown error</parameter>
+			<stylesheet>error</stylesheet>
+		</path>
+	</router>
+</package>

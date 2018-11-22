@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<object>
+		<api>XML_Translation</api>
+	</object>
+	
+	<view>
+		<name>Skeleton</name>
+		<name>XML_Translation</name>
+	</view>
+
+	<path>
+		<website>__WEBSITE_ROOT__</website>
+		<admin>__WEBSITE__</admin>
+		<amslib>__WEBSITE__/amslib/</amslib>
+		<plugin>__WEBSITE__/plugins/</plugin>
+		<include>__WEBSITE__/objects/</include>
+	</path>
+	
+	<value>
+		<title>XML Translation</title>
+	</value>
+	
+	<translator>
+		<name>website</name>
+		<type>xml</type>
+		<directory>/translations/</directory>
+		<language>en_GB</language>
+		<language>es_ES</language>
+	</translator>
+	
+	<stylesheet>
+		<file id="bootstrap" autoload="true">__AMSLIB__/util/bootstrap/3.0.2/css/bootstrap.min.css</file>
+		<file id="xml_translation" autoload="true">/resources/xml_translations.css</file>
+	</stylesheet>
+	
+	<javascript>
+		<file id="jquery" autoload="true">__AMSLIB__/util/bootstrap/3.0.2/js/bootstrap.min.js</file>
+	</javascript>
+	
+	<router>
+		<path name="xml_translation">
+			<src lang="default">/</src>
+			<src lang="en_GB">/home/</src>
+			<src lang="es_ES">/inicio/</src>
+			<resource>XML_Translation</resource>
+		</path>
+	</router>
+</package>
