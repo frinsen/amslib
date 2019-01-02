@@ -23,7 +23,7 @@
 		"url": "https://github.com/dompdf/dompdf.git"
 	},{
 		"type": "vcs",
-		"url": "https://github.com/mobfox/amslib.git"
+		"url": "https://github.com/mobfox/isemail.git"
 	}],
 
 	"require":{
