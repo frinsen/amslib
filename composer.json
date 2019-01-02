@@ -1,12 +1,13 @@
 {
     "name": "mobfox/amslib",
-    "description": "Ams Library",
+    "description": "Antimatter Studios Library",
     "license": "GPLv3",
     "type": "library",
     "authors": [
     	{
-    		"name": "Mobfox UI Team",
-    		"homepage": "http://mobfox.com"
+    		"name": "Christopher Thomas",
+    		"email": "chris.thomas@antimatter-studios.com",
+    		"homepage": "http://antimatter-studios.com"
     	}
     ],
     "minimum-stability": "dev",
@@ -22,7 +23,7 @@
 		"url": "https://github.com/dompdf/dompdf.git"
 	},{
 		"type": "vcs",
-		"url": "https://github.com/mobfox/isemail.git"
+		"url": "https://github.com/mobfox/amslib.git"
 	}],
 
 	"require":{
